@@ -1,0 +1,38 @@
+{
+  "name": "@tspower/http",
+  "version": "1.0.0",
+  "description": "http service",
+  "main": "./lib/http.js",
+  "types": "./lib/http.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "setup": "npm install",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "test-only": "mocha --require ts-node/register test/**/*.ts",
+    "pretest": "npm run build",
+    "test": "npm run test-only",
+    "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json "
+  },
+  "keywords": [
+    "http"
+  ],
+  "author": "Luigi Senzamici (luigisenzamici@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^5.5.12"
+  }, 
+  
+  "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typedoc": "^0.13.0"
+  }
+
+}
