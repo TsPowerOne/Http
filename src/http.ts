@@ -58,12 +58,14 @@ export class Http  {
                 });
             }
             var params = opts.data;
-            // We'll need to stringify if we've been given an object
-            // If we have a string, this is skipped.
-            if (params && typeof params === 'object') {
-                params = Object.keys(params).map(function (key) {
-                    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-                }).join('&');
+            var process = opts.process;
+            if (process == undefined) process = true;
+            if (process == true) {
+                if (params && typeof params === 'object') {
+                    params = Object.keys(params).map(function (key) {
+                        return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+                    }).join('&');
+                }
             }
             xhr.send(params);
         });
