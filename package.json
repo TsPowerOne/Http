@@ -1,9 +1,12 @@
 {
   "name": "@tspower/http",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "http service",
   "main": "./lib/http.js",
   "types": "./lib/http.d.ts",
+  "repository": {
+    "url": "git+https://github.com/TsPowerOne/Http.git"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -12,7 +15,8 @@
     "setup": "npm install",
     "build": "tsc",
     "build-watch": "tsc --watch",
-    "test-only": "mocha --require ts-node/register test/**/*.ts",
+    "test-console": "mocha --require ts-node/register test/**/*.ts",
+    "test-only": "mocha --require ts-node/register test/**/*.ts --reporter mocha-junit-reporter",
     "pretest": "npm run build",
     "test": "npm run test-only",
     "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json "
@@ -20,19 +24,30 @@
   "keywords": [
     "http"
   ],
-  "author": "Luigi Senzamici (luigisenzamici@gmail.com)",
+  "author": {
+    "name": "Luigi Senzamici [Pegaso Professional]",
+    "email": "luigisenzamici@gmail.com",
+    "url": "https://luigisenzamici.com"
+  },
   "license": "MIT",
   "dependencies": {
     "rxjs": "^5.5.12"
-  }, 
-  
+  },
   "devDependencies": {
     "@types/chai": "^4.1.6",
     "@types/mocha": "^5.2.5",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
-    "ts-node": "^7.0.1",
-    "typedoc": "^0.13.0"
+    "mocha-junit-reporter": "^1.23.1",
+    "ts-node": "^8.3.0",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.2"
+  },
+  "bugs": {
+    "url": "https://github.com/TsPowerOne/Http/issues"
+  },
+  "homepage": "https://tspowerone.github.io/Http/",
+  "publishConfig": {
+    "access": "public"
   }
-
 }
