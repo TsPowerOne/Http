@@ -1,6 +1,6 @@
 {
   "name": "@tspower/http",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "http service",
   "main": "./lib/http.js",
   "types": "./lib/http.d.ts",
